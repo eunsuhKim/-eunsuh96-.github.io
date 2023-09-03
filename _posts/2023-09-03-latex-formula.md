@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MathJax Example in Jekyll"
-date: 2023-09-04
+date: 2023-09-03
 ---
 
 # MathJax Example in Jekyll
