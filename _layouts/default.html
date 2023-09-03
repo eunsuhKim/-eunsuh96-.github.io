@@ -15,16 +15,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-          // custom options
-        });
-      });
-    </script>
+    
 
   </head>
-
+  
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
@@ -47,6 +41,18 @@
     </div>
 
     {% include scripts.html %}
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "\(", right: "\)", display: false},
+            {left: "\[", right: "\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "$$", right: "$$", display: true}
+          ]
+        });
+      });
+    </script>
+    
   </body>
 </html>
