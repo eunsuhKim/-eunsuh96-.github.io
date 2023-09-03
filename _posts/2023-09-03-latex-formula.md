@@ -10,7 +10,7 @@ Mathjax
 
 ## Inline formula
 
-
+\(n_e\)
 
 ## Block formula
 
