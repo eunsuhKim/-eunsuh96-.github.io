@@ -19,8 +19,6 @@ Mathjax
 E = \sqrt{{m^2c^4} + {p^2c^2}}
 \]
 
-## $\Sigma$ expression
-
 \[
 \sum_{{n=1}}^{{N}} n = \frac{{N * (N + 1)}}{2}
 \]
