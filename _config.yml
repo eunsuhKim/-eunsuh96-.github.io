@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "aqua" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US" # "ko-KR"
+locale                   : "ko-KR" # "ko-KR"
 title                    : "Building Dreams, One Byte at a Time"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
