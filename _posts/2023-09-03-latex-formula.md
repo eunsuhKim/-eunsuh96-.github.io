@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "MathJax Example in Jekyll"
+title: "KaTex Example in Jekyll"
 date: 2023-09-03
 ---
 
-# MathJax Example in Jekyll
+# KaTex Example in Jekyll
 
-Mathjax
+KaTex $e^2$
 
 ## Inline formula
 
