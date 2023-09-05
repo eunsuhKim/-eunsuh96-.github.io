@@ -1,3 +1,9 @@
+---
+layout: post
+title: "플라즈마 기초 공부(flux,cross-section,collision frequency, mean-free path)"
+date: 2023-09-05
+---
+
 # 플라즈마 기초 공부(flux,cross-section,collision frequency, mean-free path)
 
 # 배운 내용 정리
