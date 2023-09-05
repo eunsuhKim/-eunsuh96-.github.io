@@ -9,7 +9,7 @@ date: 2023-09-05
 # 배운 내용 정리
 
 - ‘teneus’ plasma assumpation : 한번에 한 입자(field particle)가 다른 한 입자(test particle)과 충돌한다는 가정. many-body collosion은 다루지 않을 예정
-- Flux ( $\Gamma$ ) : the number of field particles ($\Delta N)$ passing through unit area ($\Delta A$) per unit time ($\Delta t$)
+- Flux ($\Gamma$) : the number of field particles ($\Delta N$) passing through unit area ($\Delta A$) per unit time ($\Delta t$)
     
     $$
     \begin{equation}\Gamma\equiv \frac{\Delta N}{\Delta t\Delta A}= n_F v_0\end{equation}
@@ -20,7 +20,7 @@ date: 2023-09-05
 - “Collision” event : change of a certain physical state of the field (test) particle due to the interaction with the test particle.
 → We can quantify the cross-section only when the ‘event’ is exactly defined.
 - Cross-section ( $\sigma$ ): The total effective area of the test particle
-- Collision frequency ($\nu$)  = $\frac{1}{\text{mean time between collisions}}$ = $\frac{1}{\tau}$ = (the rate of collisions) = (the number of field particles per unit time going through the cross section.
+- Collision frequency ($\nu$)  = $\frac{1}{\text{mean time between collisions}}$ = $\frac{1}{\tau}$ = (the rate of collisions) = (the number of field particles per unit) time going through the cross section.
     
     $$
     \nu = \frac{1}{\tau} = \sigma \Gamma
