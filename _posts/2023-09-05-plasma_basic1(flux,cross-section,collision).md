@@ -4,23 +4,23 @@ title: "플라즈마 기초 공부 1"
 date: 2023-09-05
 ---
 
-# 플라즈마 기초 공부(flux, cross-section, collision frequency, mean-free path)
+# 플라즈마 기초 공부
+
+- flux, cross-section, collision frequency, mean-free path
 
 # 배운 내용 정리
 
-- ‘teneus’ plasma assumpation : 한번에 한 입자(field particle)가 다른 한 입자(test particle)과 충돌한다는 가정. many-body collosion은 다루지 않을 예정
-- Flux ($\Gamma$) : the number of field particles ($\Delta N$) passing through unit area ($\Delta A$) per unit time ($\Delta t$)
+- ‘teneus’ plasma assumpation : 한번에 한 입자 field particle 가 다른 한 입자 test particle 과 충돌한다는 가정. many-body collosion은 다루지 않을 예정
+- Flux (\(\Gamma\)) : the number of field particles (\(\Delta N\)) passing through unit area (\(\Delta A\)) per unit time (\(\Delta t\))
     
-    \[
-    \begin{equation}\Gamma\equiv \frac{\Delta N}{\Delta t\Delta A}= n_F v_0\end{equation}
-    \]
+    \[\begin{equation}\Gamma\equiv \frac{\Delta N}{\Delta t\Delta A}= n_F v_0\end{equation}\]
     
-    where $n_F$ is the density of the field particles and $v_0$ is the average “relative” velocity.
+    where \(n_F\) is the density of the field particles and \(v_0\) is the average “relative” velocity.
     
 - “Collision” event : change of a certain physical state of the field (test) particle due to the interaction with the test particle.
 → We can quantify the cross-section only when the ‘event’ is exactly defined.
-- Cross-section ($\sigma$): The total effective area of the test particle
-- Collision frequency ($\nu$)  = $\frac{1}{\text{mean time between collisions}}$ = $\frac{1}{\tau}$ = (the rate of collisions) = (the number of field particles per unit) time going through the cross section.
+- Cross-section (\(\sigma\)): The total effective area of the test particle
+- Collision frequency (\(\nu\))  = \(\frac{1}{\text{mean time between collisions}}\) = \(\frac{1}{\tau}\) = \(\text{(the rate of collisions)}\) = \(\text{(the number of field particles per unit)}\) time going through the cross section.
     
     \[
     \nu = \frac{1}{\tau} = \sigma \Gamma
@@ -28,7 +28,7 @@ date: 2023-09-05
     
     → This relation indicates that the cross-section $\sigma$ can be determined by ‘measuring’ the collision frequency $\nu$ while ‘controlling’ the flux $\Gamma$.
     
-- Mean-free path ($l_{mlp}$) : the distance travelled by the field particle during $\tau$.
+- Mean-free path (\(l_{mlp}\)) : the distance travelled by the field particle during $\tau$.
 
 출처: 윤건수 교수님 플라즈마물리 수업 강의자료
 
@@ -43,15 +43,15 @@ date: 2023-09-05
 그래서 $\Delta N$은 다음과 같이 표현될 수 있다.
 > 
 > 
-> $$
+> \[
 > \Delta N = n_F\times(\Delta A\times v_0 \times \Delta t) = n_F\times v_0 \times \Delta A \times \Delta t
-> $$
+> \]
 > 
 > 이를 $\Gamma$의 정의에 대입하면: 
 > 
-> $$
+> \[
 > \Gamma = \frac{\Delta N}{\Delta A\times \Delta t} = n_F \times v_0
-> $$
+> \]
 > 
 > 이렇게 $\Gamma = n_F\times v_0$가 된다. 이는 입자 밀도와 평균 상대 속도를 곱한 값으로, 단위 시간 단위 면적 당 통과하는 입자의 수를 나타낸다.
 > 
