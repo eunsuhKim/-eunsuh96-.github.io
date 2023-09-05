@@ -1,0 +1,7 @@
+.post__content {
+    padding-left: 100px !important;  /* 원하는 여백 크기로 설정 */
+    padding-right: 100px !important;  /* 원하는 여백 크기로 설정 */
+}
+
+/*<link rel="stylesheet" href="/assets/css/eunsuh.css">를 _layout/defaul.html의 head안에 추가
+*/

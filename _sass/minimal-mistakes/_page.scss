@@ -176,6 +176,13 @@ body {
   }
 }
 
+/* 화면 크기가 768px 이상일 때만 적용 */
+@include breakpoint($large) {
+  .page__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .page__hero {
   position: relative;
   margin-bottom: 2em;
