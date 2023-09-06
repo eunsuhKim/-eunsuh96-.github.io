@@ -3,9 +3,6 @@ layout: post
 custom_css: "eunsuh.css"
 ---
 
-<div class="post-content">
-  {{ content }}
-</div>
 
 <ul class="taxonomy__index">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
@@ -17,6 +14,10 @@ custom_css: "eunsuh.css"
     </li>
   {% endfor %}
 </ul>
+
+<div class="post-content">
+  {{ content }}
+</div>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 {% assign postsByYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}

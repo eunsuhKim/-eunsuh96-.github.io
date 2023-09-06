@@ -5,7 +5,6 @@ date: 2023-09-05
 categories: [Plasma]
 ---
 
-# 플라즈마 기초 공부
 
 - flux, cross-section, collision frequency, mean-free path
 
