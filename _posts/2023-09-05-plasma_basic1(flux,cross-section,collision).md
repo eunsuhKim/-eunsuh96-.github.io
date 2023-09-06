@@ -81,6 +81,6 @@ date: 2023-09-05
 
 Consider a situation that you are walking on a busy street. The average number of people moving in one direction is five (5) per meter per second. You are annoyed only by strong body contacts and are not concerned with minor body contacts. Suppose that you experience such annoying body contacts (’events’) in the frequency of two (2) in every second. 
 
-풀이 : flux $\Gamma$는 5이고 충돌 빈도 $\nu$는 2인 것으로 보아 $\sigma = \frac{\Gamma}{\nu} = 2.5$인 것 같다.
+풀이 : flux $\Gamma$는 5이고 충돌 빈도 $\nu$는 2인 것으로 보아 $\sigma = \frac{\nu}{\Gamma} = 0.4s$인 것 같다.
 
 ---
