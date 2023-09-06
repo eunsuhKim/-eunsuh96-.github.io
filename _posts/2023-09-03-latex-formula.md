@@ -2,6 +2,7 @@
 layout: post
 title: "KaTex Example in Jekyll"
 date: 2023-09-03
+categories: [OddsAndEnds]
 ---
 
 # KaTex Example in Jekyll

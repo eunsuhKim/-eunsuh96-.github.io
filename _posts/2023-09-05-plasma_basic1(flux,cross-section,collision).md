@@ -2,6 +2,7 @@
 layout: post
 title: "플라즈마 기초 공부 1"
 date: 2023-09-05
+categories: [Plasma]
 ---
 
 # 플라즈마 기초 공부
