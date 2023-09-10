@@ -8,7 +8,7 @@ toc_sticky: true
 
 ---
 
-Debye-Huckel potential 
+Debye-Huckel potential, Debye length, Debye number
 
 
 # 배운 내용 정리
@@ -249,5 +249,28 @@ Gauss’ law for electricity : \(\nabla\cdot E = \frac{\rho}{\epsilon_0}\)
 
 > $n_e = 10^{19}m^{-3}, T_e = 10 eV$. Calculate Debye length $\lambda_D$, Debye number $\lambda$, and the mean-free path $l_{mfp}$.
 >
+sol. 먼저, 주어진 값을 기준으로 중요한 파라미터들을 정리해 보면 다음과 같다. 
+
+- \(n_e = 10^{19}m^{-3}\)
+- \(T_e =10eV\) $($이때, \(1eV=1.60218\times 10^{-19}J\)$)$
+- \(\epsilon_0 = 8.854\times 10^{-12} F/m\text{(진공의 유전율)}\)
+- \(k_B=1.38\times 10^{-23} J/K\text{(볼츠만 상수)}\)
+- \(e=1.60218\times 10^{-19}C\text{(전자의 전하량)}\)
+1. Debyle length \(\lambda_D\)
+\[\lambda_D = \left(\frac{\epsilon_0 k_B T_e}{n_e e^2}\right)^{1/2} = \left(\frac{8.854 \times 10^{-12} \times 1.38 \times 10^{-23} \times 10 \times 1.60218 \times 10^{-19}}{10^{19} \times (1.60218 \times 10^{-19})^2}\right)^{1/2}\]
+2. Debye number \(\Lambda\)
+\[\Lambda = \left(\frac{\epsilon_0 k_B T_e}{n_e e^2}\right)^{3/2} = \left(\frac{8.854 \times 10^{-12} \times 1.38 \times 10^{-23} \times 10 \times 1.60218 \times 10^{-19}}{10^{19} \times (1.60218 \times 10^{-19})^2}\right)^{3/2}\]
+3. Mean-free path \(l_{mfp}\)
+\[l_{mfp} = \lambda_D^3 \times n_e = \lambda_D^3 \times 10^{19}\]
+
+계산은 필요하면 해보는 것으로.. 진공의 유전율이란 것은 영어로는 *vacuum permittivity* 또는 *electric constant* 라고 부른다. 단위는 Farad / meter이며, 전기장과 전하 밀도 사이의 관계를 나타내는 데에 사용된다. 
+
+좀더 자세히 설명하면, Gauss 법칙이란 전기장과 그에 관련된 전하의 분포 사이의 관계를 설명한다. Gauss 법칙을 간략하게 표현하면 다음과 같다:
+
+\[\oint E\cdot d A = \frac{Q_{enc}}{\epsilon_0}\]
+
+여기서 \(E\)는 전기장, \(dA\)는 닫힌 표면의 미소면적벡터, \(Q_{enc}\)는 그 닫힌 표면에 의해 포함되는 전체 전하량이다. \(\epsilon_0\)는 진공의 유전율 혹은 전기 상수이다. 
+
+이 식은 전체 전하량이 전기장에 어떤 영향을 주는 지를 나타낸다.
 
 ---
