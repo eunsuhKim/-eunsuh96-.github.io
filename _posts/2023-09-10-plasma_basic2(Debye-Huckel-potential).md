@@ -1,15 +1,18 @@
 ---
-layout: post
+layout: single # post
 title: "플라즈마 기초 공부 2"
 date: 2023-09-10
-categories: [Plasma]
+categories: [plasma]
+toc: true
+toc_sticky: true
+
 ---
 
 Debye-Huckel potential 
 
 
 # 배운 내용 정리
-
+## Debye-Huckel potential
 The electro-static field or potential is given by 
 
 \[
@@ -75,6 +78,34 @@ Charge neutrality (\sum_s q_s n_{s0}) →
 \[ \begin{equation}= \frac{q_T\delta(r)}{\epsilon_0} + \sum_s \frac{n_{s0}q_s^2}{\epsilon_0 k_B T_s}\phi(r)=\frac{q_T\delta(r)}{\epsilon_0} - \sum_{s\in \text{fast enough}}\frac{1}{\lambda_{D_s}}\end{equation}\]
 
 where $ \lambda_{D_s} \equiv ( \frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2} )^2 $
+\(\lambda_{D_s}\) is called *Debye length*. This point is where the Debye length is naturally defined.
+
+## Conclusion
+
+Now, 
+
+\[\bar{\phi}(r) = \frac{q_T}{4\pi\epsilon r}\exp(-\frac{r}{\lambda_D}),\]
+
+which is called Debye-Huckel potential or Shielded Collomb potential, 
+
+is actually the solution to 
+
+\[\begin{equation}-\nabla^2\phi(r) = \frac{q_T}{\epsilon_0} \delta(r)  - \frac{\lambda_D^2}\phi(r)\end{equation}\]
+
+<aside>
+💡 Note: Plasma researchers are usually too lazy $($lol$)$ to use $T$ instead of $k_BT$. So from now on, $T$ denotes the energy dimension, not just the temperature!! That is why we use $eV$ $($unit of energy$)$ for $T’s$.
+
+</aside>
+
+## Debye number
+
+: How many particles in the unit area $($that affects the test particle $)$
+
+\[\Lambda_s\equiv n_s \lambda_{D_s}^3\]
+
+By the assumption of weak interaction, $(=$ Thermal energy is much larger than potential energy.$=T_s\gg \phi_s)$ the following usually holds true.
+
+\[\Lambda\sim (\frac{\epsilon_0 T}{e^2 n^{1/3}})^{3/2}\gg1.\]
 
 출처: 윤건수 교수님 플라즈마물리 수업 강의자료
 
@@ -213,3 +244,10 @@ Gauss’ law for electricity : \(\nabla\cdot E = \frac{\rho}{\epsilon_0}\)
 한편 Gauss’ law는 Maxwell의 방정식 네 개 중의 하나로, 전기장과 전하 밀도 사이의 기본적인 관계를 나타낸다. 이는 마치 뉴턴의 제 2법칙 \(F = ma\) 가 힘과 운동상태 사이의 기본적인 관계를 나타내는 것과 비슷한 의미를 가진다. 
 
 이 방정식을 포함한 Maxwell의 방정식들은 전기와 자기에 관련된 수많은 실험 결과들을 기반으로 합리화되었고, 그 결과로 현대 전자기학의 기초가 되었다고 한다.
+
+# 간단한 연습문제
+
+> $n_e = 10^{19}m^{-3}, T_e = 10 eV$. Calculate Debye length $\lambda_D$, Debye number $\lambda$, and the mean-free path $l_{mfp}$.
+>
+
+---
