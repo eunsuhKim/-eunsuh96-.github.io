@@ -4,6 +4,7 @@ title: "플라즈마 기초 공부 2"
 date: 2023-09-10
 categories: [Plasma]
 ---
+
 Debye-Huckel potential 
 
 
@@ -74,6 +75,8 @@ Charge neutrality (\sum_s q_s n_{s0}) →
 \[ \begin{equation}= \frac{q_T\delta(r)}{\epsilon_0} + \sum_s \frac{n_{s0}q_s^2}{\epsilon_0 k_B T_s}\phi(r)=\frac{q_T\delta(r)}{\epsilon_0} - \sum_{s\in \text{fast enough}}\frac{1}{\lambda_{D_s}}\end{equation}\]
 
 where $ \lambda_{D_s} \equiv ( \frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2} )^2 $
+
+출처: 윤건수 교수님 플라즈마물리 수업 강의자료
 
 # ChatGPT Q&A result
 
