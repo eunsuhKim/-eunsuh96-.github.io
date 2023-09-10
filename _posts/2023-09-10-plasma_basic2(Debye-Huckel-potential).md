@@ -4,22 +4,22 @@ title: "플라즈마 기초 공부 2"
 date: 2023-09-10
 categories: [Plasma]
 ---
-
+Debye-Huckel potential 
 
 
 # 배운 내용 정리
 
-The electro-static field (or potential) is given by 
+The electro-static field or potential is given by 
 
-$$
+\[
 \bar{\phi}_t(r) = \frac{q_t}{4\pi \epsilon_0 r}\exp(-\frac{r}{\lambda_D})
-$$
+\]
 
 where \(q_t\) is the charge that changes with time and \(r\) is the distance from the test particle and \(\lambda_D\) is the Debye-length.
 
 The derivation of this formula is the following.
 
-- Equation of motion( =momentum equation) for the species \(s\) where \(s\) is a field particle.
+- Equation of motion$($ =momentum equation$)$ for the species \(s\) where \(s\) is a field particle.
 \[\begin{equation}m_s \frac{du_s}{dt} = -q_s\nabla\phi - \frac{\nabla p_s}{n_s} - \nu_s m_s u_s\end{equation}\]
 \(LHS\): time derivative of momentum \(m_su_s\)
 \[\begin{equation}\frac{d(m_su_s)}{dt} = \frac{dm_s}{dt}u_s+m_s \frac{du_s}{dt} = m_s \frac{du_s}{dt}\end{equation}\]
@@ -29,7 +29,7 @@ The derivation of this formula is the following.
 - \( -\nu_s m_s u_u\) : momentum loss by the friction
 - notations
     - \(m_s\) : mass of specific particle
-    - \(\q_s) : charge of the particle
+    - \(\q_s\) : charge of the particle
     - \(\phi\) : electric field
     - \(p_s\) : pressure
     - \(\nu_s\) : collision frequency
@@ -38,7 +38,7 @@ The derivation of this formula is the following.
 > Assumptions
 > 
 
-Steady-state(\(LHS\approx 0\)), isothermal(\(\nabla p = k_B \nabla T\cdot n+k_B T\cdot n\approx k_B T\cdot n\)), no friction(\(text{friction term}\approx 0\)) assumption →
+Steady-state(\(LHS\approx 0\)), isothermal(\(\nabla p = k_B \nabla T\cdot n+k_B T\cdot n\approx k_B T\cdot n\)), no friction(\(\text{friction term}\approx 0\)) assumption →
 
 \[\begin{equation}0\approx -q_s\nabla \phi - \frac{k_B T_s \nabla n_s}{n_s}\end{equation}\]
 
@@ -47,33 +47,33 @@ where \(T_s\) is the temperature of the species \(s\).
 > Boltzmann relation
 > 
 
-\[n_s = n_{s0}\exp(-\frac{q_s\phi}{k_BT_s}\]
+\[n_s = n_{s0}\exp(-\frac{q_s\phi}{k_BT_s})\]
 
 Weak interaction →
 
-\[\begin{equation}n_s\approx n_{s0}(1-\frac{q_s\phi}{k_B T_s}\end{equation}\]
+\[\begin{equation}n_s\approx n_{s0}(1-\frac{q_s\phi}{k_B T_s})\end{equation}\]
 
-(Assuming weak interaction, the Taylor expansion of this exponential function can be sufficiently precisely approximated by only the 1st order approximation, i.e., Linearization.)
+Assuming weak interaction, the Taylor expansion of this exponential function can be sufficiently precisely approximated by only the 1st order approximation, i.e., Linearization.
 
-> Poisson equation (= Gauss’ law for the electric charge)
+> Poisson equation = Gauss’ law for the electric charge
 > 
 
 It describes the relation between electric potential and charge density.
 
 \[\begin{equation}-\nabla^2\phi(r) = \frac{ q_T \delta(r)}{\epsilon_0} + \sum_{s} \frac{q_s n_s(r)}{\epsilon_0}\end{equation}\]
 
-- Test particle is very small and thus is regarded as a point. (reason why \(\delta(r)\) is used.)
+- Test particle is very small and thus is regarded as a point: the reason why \(\delta(r)\) is used.
 - \(RHS\) contains all the causes.
 
 Boltzmann relation →
 
-\[=\frac{q_T}\delta(r)}{\epsilon_0}+\sum_{s}\frac{q_s n_{s0}(1-\frac{q_s\phi(r)}{k_B T_s})}{\epsilon_0}\]
+\[=\frac{q_T}{\delta(r)}{\epsilon_0}+\sum_{s}\frac{q_s n_{s0}(1-\frac{q_s\phi(r)}{k_B T_s})}{\epsilon_0}\]
 
 Charge neutrality (\sum_s q_s n_{s0}) →
 
-\[ \begin{equation*}\begin{split}&= \frac{q_T\delta(r)}{\epsilon_0} + \sum_s \frac{n_{s0}q_s^2}{\epsilon_0 k_B T_s}\phi(r)\\&=\frac{q_T\delta(r)}{\epsilon_0} - \sum_{s\in \text{fast enough}}\frac{1}{\lambda_{D_s}}\end{split}\end{equation*}\]
+\[ \begin{equation}= \frac{q_T\delta(r)}{\epsilon_0} + \sum_s \frac{n_{s0}q_s^2}{\epsilon_0 k_B T_s}\phi(r)=\frac{q_T\delta(r)}{\epsilon_0} - \sum_{s\in \text{fast enough}}\frac{1}{\lambda_{D_s}}\end{equation}\]
 
-where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right)^2\)
+where $ \lambda_{D_s} \equiv ( \frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2} )^2 $
 
 # ChatGPT Q&A result
 
@@ -87,7 +87,7 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
 - 압력 \(p_s\)의 단위는 \([p_s]=\frac{N}{m^2}=Pa\text{(Pascal)}\)이므로, \(\nabla p_s\)의 단위는 \([\nabla p_s]=\frac{\text{(입자 개수)}}{m^3}\) 이다.
 
 <aside>
-💡 플라즈마 맥락에서는 보통 압력의 단위로서 \(Torr\)를 많이 사용하며, \(1~Torr\)는 대략 \(133.322368 Pa\)와 같다. 여기서 \(Pascal(Pa)\)는 SI단위계에서의 압력 단위이며 \(1~Pa=1N/m^2\)로 정의된다. 그러나 물리량 간의 연산이나 비교를 위해서는 모든 단위를 SI단위계로 변환하는 것이 좋다.
+💡 플라즈마 맥락에서는 보통 압력의 단위로서 $Torr$를 많이 사용하며, $1~Torr$는 대략 $133.322368 Pa$와 같다. 여기서 $Pascal(Pa)$는 SI단위계에서의 압력 단위이며 $1~Pa=1N/m^2$로 정의된다. 그러나 물리량 간의 연산이나 비교를 위해서는 모든 단위를 SI단위계로 변환하는 것이 좋다.
 
 </aside>
 
@@ -119,7 +119,7 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
 
 볼츠만 상수 \(k_B\)는 기체 상수 \(R\)과 관련이 있다. 기체 상수는 모든 몰에 대해 일정하며, 볼츠만 상수는 개별 입자에 대해 일정하다. 따라서 다음이 성립한다.
 
-\[R = k_B \cdot N_A~~(N_A:\text{(는 아보가드로 수)})\]
+\[R = k_B \cdot N_A~~(N_A:\text{( 아보가드로 수)})\]
 
 이상 기체 방정식을 개별 입자에 대해 쓰면 \(p = \frac{n}{V}k_BT\)가 되며, 여기서 \(\frac{n}{V}\)는 밀도 \(n\)이 된다. 따라서 \(p=nk_BT\)가 된다!
 
@@ -127,7 +127,12 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
 
 볼츠만 상수 \(k_B\)는 상수여서 단위가 없을 줄 알았더니, 변환을 위해 사용되는 상수여서 그런지 \(J/K\)라는 단위가 있다고 한다. 밀도의 단위 \(1/m^3\)와 온도의 단위 \(K\)와 결합하면 
 
-\[\begin{equation}\begin{split}\text{(밀도)}\times \text{(볼츠만 상수)}\times \text{(온도)}\\ & = frac{\text{입자의 수}}{m^3}\times\frac J K \times K\\ & = \frac{\text{(입자의 수)}\times J}{m^3}=\frac{J}{m^3}\end{split}\end{equation}\]
+\[ \begin{equation}
+\text{(밀도)} \times \text{(볼츠만 상수)} \times \text{(온도)} = \frac{\text{(입자의 수)}}{m^3} \times \frac{J}{K} \times K 
+ = \frac{\text{(입자의 수)} \times J}{m^3} = \frac{J}{m^3}
+\end{equation} \]
+
+
 
 이 단위는 압력의 단위와 동등하다. 왜냐하면 에너지(\(J\))를 체적(\(m^3\))으로 나눈 것은 힘(\(N\))을 면적(\(m^2\))로 나눈 것과 동일하기 때문이다.
 
@@ -139,7 +144,7 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
 
 \[ W= F\times d\] 
 
-이때, 압력이 일정하게 유지되는 경우(그렇지 않으면 일을 적분으로 계산해야 하는데 지금은 단위를 따지기 위한 과정이므로)에는 이 작업은 단위 면적 당 : 
+이때, 압력이 일정하게 유지되는 경우$($그렇지 않으면 일을 적분으로 계산해야 하는데 지금은 단위를 따지기 위한 과정이므로$)$에는 이 작업은 단위 면적 당 : 
 
 \[ W  = P\times A\times d\]
 
@@ -149,7 +154,9 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
 
 ## Boltzmann relation이 성립하는 이유
 
-통계 열역학적으로 특정 에너지 \(E\)를 갖는 분자의 수는 \(\exp(-\frac{E}{k_BT}\)에 비례한다고 한다. (열역학 에너지인 \(k_BT_s\)에 대하여, 에너지 \(E\)를 갖는 상태에 입자가 있을 확률은 \(P(E)\propto \exp(-\frac{E}{k_BT_s})\)으로 주어진다. \(k_B\)는 볼츠만 상수이고 \(T_s\)는 절대온도이다.)
+통계 열역학적으로 특정 에너지 \(E\)를 갖는 분자의 수는 \(\exp(-\frac{E}{k_BT})\)에 비례한다고 한다. (열역학 에너지인 \(k_BT_s\)에 대하여, 에너지 \(E\)를 갖는 상태에 입자가 있을 확률은 
+\[ P(E) \propto \exp(-\frac{E}{k_B T_s}) \] 
+으로 주어진다. \(k_B\)는 볼츠만 상수이고 \(T_s\)는 절대온도이다.)
 
 또한 전하 \(q_s\)를 갖는 입자가 전위 \(\phi\)에서 얻는 potential 에너지는 \(q_s\phi\)이다. 
 
@@ -165,7 +172,7 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
     
     전기장 \(E\)내에서 작은 거리 \(dx\)를 이동하는 전하 \(q_s\)에 의해 수행되는 일 \(dW\)는 다음과 같다.
     
-    \[dW = q_s E dx~~\text{(전기장의 정의인 }E=\frac{F}{q}\text{에 의해서}\]
+    \[dW = q_s E dx~~\text{(전기장의 정의인 }E=\frac{F}{q}\text{에 의해서})\]
     
     한편, 전위 \(\phi\)는 전기장 \(E\)와 다음과 같은 관계가 있다.
     
@@ -184,7 +191,7 @@ where \(\lambda_{D_s} \equiv \left(\frac{\epsilon_0 k_B T_s}{n_{s0} q_s^2}\right
 
 \(E\)를 대입하면, 전위 \(\phi\)에서의 입자 밀도 \(n_s\)는, \(\phi=0\)에서의 입자 밀도 \(n_{s0}\)에 대하여 다음과 같이 나타난다. (\(\phi=0\)을 대입하면 \(n_{s0}\)가 나오도록)
 
-\[n_s = n_{s0} \exp(-\frac{q_s\phi}{k_BT_s}\]
+\[n_s = n_{s0} \exp(-\frac{q_s\phi}{k_BT_s})\]
 
 이를 해석해 보면, 전기장 내에서 charge된 입자의 분포는, 입자의 에너지 분포에 의해 결정된다. 높은 전위에서 입자는 더 높은 potential 에너지를 가지므로, 그 위치에서의 입자 밀도는 더 낮다. 
 
@@ -200,6 +207,6 @@ Gauss’ law for electricity : \(\nabla\cdot E = \frac{\rho}{\epsilon_0}\)
 
 포아송 방정식은 전하밀도와 전기장 사이의 관계를 표현하는 Gauss’ law for electricity와 동치이다. \(E =-\nabla\phi \)이기 때문이다.
 
-한편 Gauss’ law는 Maxwell의 방정식 네 개 중의 하나로, 전기장과 전하 밀도 사이의 기본적인 관계를 나타낸다. 이는 마치 \(F = ma\) (뉴턴의 제 2법칙) 가 힘과 운동상태 사이의 기본적인 관계를 나타내는 것과 비슷한 의미를 가진다. 
+한편 Gauss’ law는 Maxwell의 방정식 네 개 중의 하나로, 전기장과 전하 밀도 사이의 기본적인 관계를 나타낸다. 이는 마치 뉴턴의 제 2법칙 \(F = ma\) 가 힘과 운동상태 사이의 기본적인 관계를 나타내는 것과 비슷한 의미를 가진다. 
 
 이 방정식을 포함한 Maxwell의 방정식들은 전기와 자기에 관련된 수많은 실험 결과들을 기반으로 합리화되었고, 그 결과로 현대 전자기학의 기초가 되었다고 한다.

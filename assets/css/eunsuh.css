@@ -3,7 +3,7 @@
     margin: auto;  /* 중앙정렬 */
   }
 .post-title {
-    color: rgb(47, 47, 125);  /* 원하는 색깔로 변경 가능 */
+    color: rgb(200, 1, 80);  /* 원하는 색깔로 변경 가능 */
     font-weight: bold;  /* 글씨를 두껍게 */
     font-size: 2.0em;  /* 부모 요소의 font-size에 대해 2.5배 크기로 설정 */
   }
