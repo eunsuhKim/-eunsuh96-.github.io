@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 
-- flux, cross-section, collision frequency, mean-free path
+flux, cross-section, collision frequency, mean-free path
 
 # 배운 내용 정리
 
@@ -79,10 +79,11 @@ toc_sticky: true
 > 두 양변의 단위가 같으므로, 이 수식은 단위 측면에서도 물리적으로 일관된다고 할 수 있다. 
 > 
 
-# 귀여운 연습 문제
+# Exercise
 
-Consider a situation that you are walking on a busy street. The average number of people moving in one direction is five (5) per meter per second. You are annoyed only by strong body contacts and are not concerned with minor body contacts. Suppose that you experience such annoying body contacts (’events’) in the frequency of two (2) in every second. 
+> Consider a situation that you are walking on a busy street. The average number of people moving in one direction is five (5) per meter per second. You are annoyed only by strong body contacts and are not concerned with minor body contacts. Suppose that you experience such annoying body contacts (’events’) in the frequency of two (2) in every second.
+> 
 
-풀이 : flux $\Gamma$는 5이고 충돌 빈도 $\nu$는 2인 것으로 보아 $\sigma = \frac{\nu}{\Gamma} = 0.4s$인 것 같다.
+풀이 : flux $*Γ*$는 5이고 충돌 빈도 *ν*는 2이므로 $\sigma = \frac{\nu}{\Gamma} = 0.4m$.
 
 ---

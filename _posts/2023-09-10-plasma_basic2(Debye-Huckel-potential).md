@@ -252,7 +252,9 @@ Gauss’ law for electricity : \(\nabla\cdot E = \frac{\rho}{\epsilon_0}\)
 
 이 방정식을 포함한 Maxwell의 방정식들은 전기와 자기에 관련된 수많은 실험 결과들을 기반으로 합리화되었고, 그 결과로 현대 전자기학의 기초가 되었다고 한다.
 
-# 간단한 연습문제 1
+# Exercise
+
+## Ex 1
 
 > $n_e = 10^{19}m^{-3}, T_e = 10 eV$. Calculate Debye length $\lambda_D$, Debye number $\lambda$, and the mean-free path $l_{mfp}$.
 >
@@ -280,25 +282,45 @@ sol. 먼저, 주어진 값을 기준으로 중요한 파라미터들을 정리�
 
 이 식은 전체 전하량이 전기장에 어떤 영향을 주는 지를 나타낸다.
 
-# 간단한 연습문제 2
-> What is the Debye length of the plasma with the electron density \(n_e=10^{11}cm^{-3}\) and temperature \(T_e = 11,600~K (\text{or }k_BT_e = 1 ~eV)\). Assume that the ions are too heavy to contribute for shielding. You may use the NRL plasma formulary.
+## Ex 2
 
-sol. 먼저 주어진 값을 SI단위로 변환해야 한다.
-\[n_e = 10^{11}cm^{-3}= 10^{15}m^{-3}\]
-\[k_B T_e = 1~eV = 1.60218\times 10^{-19}J\]
-\[q_e = 1.60218\times 10^{-19}C\]
-\[\epsilon_0 = 8.854\times 10^{-12}F/m\]
-Debye 길이의 정의에 대입하면
-\[\lambda_{D_e} = \left(\frac{\epsilon_0 k_B T_e}{n_e q_e^2}\right)^{1/2}\]
-이제 값을 대입하면
-\[\lambda_{D_e} = \left(\frac{8.854\times 10^{-12}\times 1.60218\times 10^{-19}}{10^{15}\times (1.60218\times 10^{-19})}\right)^{1/2}\]
-이 된다. 계산기로 해봐야지.
+> What is the Debye length of the plasma with the electron density $($\(n_e=10^{11}cm^{-3}\)$)$ and temperature $($\(T_e = 11,600~K (k_BT_e = 1 ~eV)\)$)$. Assume that the ions are too heavy to contribute for shielding. You may use the NRL plasma formulary.
+> 
 
-# 간단한 연습문제 3
+sol. 먼저 주어진 값을 SI단위로 변환해야 한다. 
+
+$n_e = 10^{11}cm^{-3}= 10^{17}m^{-3}$ 
+
+$k_B T_e = 1~eV = 1.6021810^{-19}J$
+
+$q_e = 1.6021810^{-19}C$ 
+
+$\epsilon_0 = 8.85410^{-12}F/m$
+
+*Debye 길이의 정의에 대입하면  $\lambda_{D_e} = (\frac{\epsilon_0 k_B T_e}{n_e e^2})^{1/2}$* 
+
+이제 값을 대입하면 $\lambda_{D_e} = \left(\frac{8.854\times 10^{-12}\times 1.60218\times 10^{-19}}{10^{17}\times (1.60218\times 10^{-19})^2}\right)^{1/2}\approx 2.35\times 10^{-5}m$이 된다. 
+
+NRL plasma formulary를 사용하여 계산하면 다음과 같다.
+
+\[
+\lambda_{D_e}\approx7.43\times 10^2\times 1eV^{1/2} 10^{-11/2}\approx2.35\times10^{-3}cm
+\]
+
+또는 $\frac{1}{4\pi\epsilon_0}\approx 9\times 10^9$임을 활용하여 계산하면 다음과 같다. 
+
+\[
+\lambda_{D_e}\approx\left(\frac{1eV}{4\pi\times(9\times 10^9)\times10^{17}\times e^2}\right)^{1/2} = \left(\frac{1V}{4\pi\times(9\times 10^9)\times10^{17}\times1.602\times 10^{-19}}\right)^{1/2}\approx2.35\times10^{-5}m
+\]
+
+## Ex 3
+
 > Find the number of electrons within the Debye sphere $($an imaginary sphere with the radius \(\lambda_D\)$)$.
+> 
 
 sol. Debye number의 정의에 대입해 보면 
-\[\Lambda = n_e\cdot V = n_e\cdot \frac{4}{3}\pi\lambda_{D_e}^3 = 10^{11}cm^{-3}\times\lambda_{D_e}^3\]
-이다. 계산기로 마저 계산하면 되겠다.
+
+\[\Lambda= n_e\text{(Volume)} = n_e\frac{4}{3}\pi\lambda_{D_e}^3 = 10^{17}m^{-3}\times\frac{4}{3}\pi\lambda_{D_e}^3 \approx 5.43\times 10^3\]이다.
+
 
 ---
