@@ -194,33 +194,40 @@ By the assumption of weak interaction, $(=$ Thermal energy is much larger than p
 
 또한 전하 \(q_s\)를 갖는 입자가 전위 \(\phi\)에서 얻는 potential 에너지는 \(q_s\phi\)이다. 
 
-- potential energy가 \(q_s\phi\)인 이유
+
+<details>
+<summary>potential energy가 $q_s\phi$인 이유</summary>
+<div markdown="1">
+
+전하가 전기장 내에 위치하게 되면, 그 전하는 potential 에너지를 가지게 된다. 이 potential 에너지는 전하의 크기와 전기장의 강도에 의존한다. 
     
-    전하가 전기장 내에 위치하게 되면, 그 전하는 potential 에너지를 가지게 된다. 이 potential 에너지는 전하의 크기와 전기장의 강도에 의존한다. 
-    
-    전하가 위치한 지점의 전위를 \(\phi\)라고 할 때, 그 지점의 전하 \(q_s\)에 의해 발생하는 잠재 에너지 \(U\)는 다음과 같이 정의된다:
-    
-    \[U= q_s \phi\]
-    
-    다음은 이 식의 유도 과정이다. 
-    
-    전기장 \(E\)내에서 작은 거리 \(dx\)를 이동하는 전하 \(q_s\)에 의해 수행되는 일 \(dW\)는 다음과 같다.
-    
-    \[dW = q_s E dx~~\text{(전기장의 정의인 }E=\frac{F}{q}\text{에 의해서})\]
-    
-    한편, 전위 \(\phi\)는 전기장 \(E\)와 다음과 같은 관계가 있다.
-    
-    \[E = - \nabla \phi\]
-    
-    위 두 식을 결합하면:
-    
-    \[dW = - q_s\nabla\phi dx\]
-    
-    전하가 무한한 거리에서 특정 지점까지 이동할 때의 총 일은 전위 \(\phi\)에 의해 주어진 potential 에너지와 같다. 따라서 다음과 같이 전하 \(q_s\)의 potential 에너지 식이 유도된다.
-    
-    \[U= \int dW = \int - q_s \nabla \phi dx = q_s\phi\]
-    
-    (\(x\)는 벡터이고, 따라서 potential function의 성질에 따라서 multivariable integration을 하면 나오는 결과인 것 같다.)
+전하가 위치한 지점의 전위를 \(\phi\)라고 할 때, 그 지점의 전하 \(q_s\)에 의해 발생하는 잠재 에너지 \(U\)는 다음과 같이 정의된다:
+
+\[U= q_s \phi\]
+
+다음은 이 식의 유도 과정이다. 
+
+전기장 \(E\)내에서 작은 거리 \(dx\)를 이동하는 전하 \(q_s\)에 의해 수행되는 일 \(dW\)는 다음과 같다.
+
+\[dW = q_s E dx~~\text{(전기장의 정의인 }E=\frac{F}{q}\text{에 의해서})\]
+
+한편, 전위 \(\phi\)는 전기장 \(E\)와 다음과 같은 관계가 있다.
+
+\[E = - \nabla \phi\]
+
+위 두 식을 결합하면:
+
+\[dW = - q_s\nabla\phi dx\]
+
+전하가 무한한 거리에서 특정 지점까지 이동할 때의 총 일은 전위 \(\phi\)에 의해 주어진 potential 에너지와 같다. 따라서 다음과 같이 전하 \(q_s\)의 potential 에너지 식이 유도된다.
+
+\[U= \int dW = \int - q_s \nabla \phi dx = q_s\phi\]
+
+(\(x\)는 벡터이고, 따라서 potential function의 성질에 따라서 multivariable integration을 하면 나오는 결과인 것 같다.)
+
+</div>
+</details>
+
     
 
 \(E\)를 대입하면, 전위 \(\phi\)에서의 입자 밀도 \(n_s\)는, \(\phi=0\)에서의 입자 밀도 \(n_{s0}\)에 대하여 다음과 같이 나타난다. (\(\phi=0\)을 대입하면 \(n_{s0}\)가 나오도록)
