@@ -53,7 +53,7 @@ Debye 길이는 *플라즈마 내에서 전하 불균형이 얼마나 빠르게 
 
 그렇게 발생된 non-neutral \(V_s\)에서 야기된 전기장이 다시 중성상태를 만들려고 하는데, 이 때 전기장에 의해 행해지는 일의 크기가 escaping electron들의 초기 운동 에너지보다 클 수 없음을 이용하여 \(r_{max}\)를 구할 수 있다.
 
-## Radial electric field가 \(E(r) = \frac{f\frac{4}{3}r^3\cdot n_e e}{4\pi \epsilon_0 r^2}\) 인 이유
+## Radial electric field가 $E(r) = \frac{f\frac{4}{3}r^3\cdot n_e e}{4\pi \epsilon_0 r^2}$ 인 이유
 
 이 문제는 Gauss 법칙으로 설명할 수 있다. 
 
