@@ -105,8 +105,16 @@ Debye 길이는 *플라즈마 내에서 전하 불균형이 얼마나 빠르게 
 > Assume that each electron has the same probability \(p\) of escaping the spherical volume \(V_s\) $($radius \(r_s\)$)$, and initially there are \(10^5\) electrons and the same number of ions in the volume. What is the probability of the electron depletion with \(f=0.01\)?
 > 
 
-$($1$)$에서 $f\cdot \left(n_e \frac{4\pi}{3} r_s^3\right)$ 부분은 escaping 전자들이 나가고 나서 남아있는 전자들의 수이다. 따라서 전자들이 deplete $($고갈$)$될 확률은 다음과 같다. 
+이 문제는 combinotorial 하게 접근할 수 있다.
 
-\[1-\frac{f\cdot \left(n_e \frac{4\pi}{3}r_s^3\right)}{10^5}\]
+각 전자들이 빠져나갈 확률 \(p\)는 동일하게 주어져 있다.
 
-여기서 \(n_e = \frac{10^5}{\frac{4\pi}{3}r_s^3}\) 인데 그러면 답은 \(0.99\)인가?
+총 \(N = 10^5\)개의 전자들 중에서 \(k=Nf=10^5\times 0.01=1000\)개가 빠져나가는 상황은 Binomial distribution을 이용해서 모델링할 수 있다.
+
+따라서 전자 depletion 현상이 일어날 확률은 다음과 같다.
+
+\[N~C_k p^k(1-p)^{N-k} = 10000 C_{1000} p^{1000}(1-p)^{99000}\]
+
+이 값은 Stirling 근사 등을 활용하여 근사할 수 있다.
+
+---
