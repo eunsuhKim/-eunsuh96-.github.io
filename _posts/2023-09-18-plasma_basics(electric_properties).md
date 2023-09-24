@@ -78,7 +78,7 @@ sol. Using the NRL formulary for the electron plasma frequency,
 f_{pe} = \frac{\omega_{pe}}{2\pi}\approx 8.98\times 10^3\sqrt{n_e}= 8.98\times 10^3\times (10^{13})^{1/2} = 8.98\times 10^{9.5}
 \]
 
-So $\omega_{pe}\approxeq 8.98\times10^{9.5}\times 2\pi \approx 1.78\times 10^11$
+So $\omega_{pe}\approxeq 8.98\times10^{9.5}\times 2\pi \approx 1.78\times 10^{11}$
 
 ---
 
