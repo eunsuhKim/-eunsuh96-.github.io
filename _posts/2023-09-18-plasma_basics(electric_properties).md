@@ -56,7 +56,7 @@ $B_0= 0, T_0 \approx 0  ~(\text{or } p_0=0 )$ — temperature 나 pressure가 0�
 
 sol. The electron plasma frequency \(\omega_{pe}\) is given by 
 \[\omega_{pe} = \sqrt{\frac{n_e e^2}{\epsilon_0 m_e}}\]
-where \(n_e\) is the density of electron, \(e\) is the charge of an electron, \(\epsilon_e\) is the vacuum permitivity, and \(m_e\) is the mass of an electron.
+where \(n_e\) is the density of electron, \(e\) is the charge of an electron, \(\epsilon_0\) is the vacuum permitivity, and \(m_e\) is the mass of an electron.
 
 Similarly, the ion plasma frequency \(\omega_{pi}\) is
 \[\omega_{pi}^2 = \frac{n_iZ^2e^2}{\epsilon_0M_i}\]
