@@ -54,11 +54,18 @@ $B_0= 0, T_0 \approx 0  ~(\text{or } p_0=0 )$ — temperature 나 pressure가 0�
 > Explain why $\omega_p \equiv (\sum_s \omega_{ps}^2)^{1/2}\approx \omega_{pe}$ for typical plasma comprised of electrons and ions. Here $\omega_{pe}$ is the electron plasma frequency.
 > 
 
-sol. Not yet
+sol. The electron plasma frequency \(\omega_{pe}\) is given by 
+\[\omega_{pe} = \sqrt{\frac{n_e e^2}{\epsilon_0 m_e}}\]
+where \(n_e\) is the density of electron, \(e\) is the charge of an electron, \(\epsilon_e\) is the vacuum permitivity, and \(m_e\) is the mass of an electron.
 
-\[
-\sum_s\omega_{ps}^2 = \sum_s\left(\frac{n_{0s}q_s^2}{\epsilon_0m_s}\right)^2
-\]
+Similarly, the ion plasma frequency \(\omega_{pi}\) is
+\[\omega_{pi}^2 = \frac{n_iZ^2e^2}{\epsilon_0M_i}\]
+where \(n_i\) is the ion density, \(Z\) is the ion charge state, \(m_e\) is the ion mass.
+
+Because ions are much more massive than electrons $(M_i\gg m_e)$, 
+their contribution to the plasma frequency tends to be much smaller than that of electrons. So for a typical plasma, we can use the following approximation:
+
+\[\omega_p = \sqrt{\omega_{pe}^2 + \omega_{pi}^2}\approx \omega_{pe}^2.\]
 
 # Ex. 2
 
@@ -71,7 +78,7 @@ sol. Using the NRL formulary for the electron plasma frequency,
 f_{pe} = \frac{\omega_{pe}}{2\pi}\approx 8.98\times 10^3\sqrt{n_e}= 8.98\times 10^3\times (10^{13})^{1/2} = 8.98\times 10^{9.5}
 \]
 
-So $\omega_{pe}\approxeq 8.98\times10^{9.5}\times 2\pi \approx$
+So $\omega_{pe}\approxeq 8.98\times10^{9.5}\times 2\pi \approx 1.78\times 10^11$
 
 ---
 
