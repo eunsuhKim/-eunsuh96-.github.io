@@ -69,4 +69,6 @@ $(e)$ Penning ionization이라는 이름까지 붙을 정도로 중요한 과정
 마지막 줄을 정리하면 다음과 같다.\[\begin{equation}\frac{1}{2}mv^2\cdot (1-\frac{m}{M^\prime}) = \varepsilon_{excited}\end{equation}\] 
 
 여기서 \(m\)과 \(M^\prime\)의 값은 정해져 있고, 좌변의 값은 자유 전자가 가지고 있던 속도 \(v\)에 따라서 continuous한 값을 가질 수 있다. 반면 우변은 bound electron의 excited state이기 때문에 discrete한 값만을 가질 수 있다. 따라서 임의의 속도 \(v\)에 대해 이런 등식이 성립할 수 없으므로 자유전자와 이온이 둘만 합쳐지는 것은 불가능하다. 대신 third body인 \(M\)도 함께 충돌해야지만 이런 현상이 설명 가능하게 된다.
+
+
 ---
