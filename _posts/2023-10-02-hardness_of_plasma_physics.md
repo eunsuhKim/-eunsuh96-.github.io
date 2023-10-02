@@ -8,7 +8,7 @@ toc_sticky: true
 
 ---
 
-Energy, momentum conservation
+Challenging points
 
 오늘은 플라즈마 물리를 공부하기 어려운 이유에 관해 잠시 이야기하고자 한다. 
 
