@@ -1,6 +1,6 @@
 ---
 layout: single # post
-title: "플라즈마 기초 공부 7"
+title: "플라즈마 기초 공부 6"
 date: 2023-09-18
 categories: [plasma]
 toc: true
