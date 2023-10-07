@@ -64,3 +64,5 @@ collision frequency \(\nu\) 역시 다음과 같이 실점적인 값들을 이�
 Rate coefficient \(K_{ex}\)의 아래 첨자는 excitation collision의 반응 계수를 의미한다. $($여러 경우 중 exciation의 경우를 예로 들면$)$ 
 
 \[\begin{equation}\begin{split}K_{ex} n_e &= \frac{1}{n_A}\frac{d n_{A^*}}{dt} = \nu_{eg,ex} \\\\ K_{ex} &= \frac{\nu_{ex}}{n_e}= \int_0^\infty \sigma_{ex}(v) v f_e(v)dv /n_e = \lt \sigma_{ex}(v) v \gt \end{split}\end{equation}\]
+
+Rate coefficient를 위와 같이 쓰면 
