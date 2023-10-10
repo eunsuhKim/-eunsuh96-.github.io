@@ -65,4 +65,18 @@ Rate coefficient \(K_{ex}\)의 아래 첨자는 excitation collision의 반응 �
 
 \[\begin{equation}\begin{split}K_{ex} n_e &= \frac{1}{n_A}\frac{d n_{A^*}}{dt} = \nu_{eg,ex} \\\\ K_{ex} &= \frac{\nu_{ex}}{n_e}= \int_0^\infty \sigma_{ex}(v) v f_e(v)dv /n_e = \lt \sigma_{ex}(v) v \gt \end{split}\end{equation}\]
 
-Rate coefficient를 위와 같이 쓰면 
+잠시 distribution function \(f_e(\eta)\)에 대한 이야기로 넘어가보자. 
+전형적인 예시로 Maxwell Boltzman distribution이 모델링에 많이 쓰이며, 이 distribution을 결정하는 parameter는 half height의 높이에서의 full width 하나 뿐이다. 그러나 일반적으로는 아르곤처럼 funny shape을 가질 수도 있으며, 그럴 경우 Maxwell Boltzman distribution을 사용할 수 없고 그 모양을 잘 근사하는 특정 form의 함수를 사용한다. $($주로 exponential function들을 결합해서 쓴다. $)$
+
+Rate coefficient를 위와 같이 쓰면 자연스럽게 \(v,\sigma_{ex}(v)\)를 결정하는 입자 간 상대속도\(v\)에 직접적인 영향을 주는 전자 온도 \(T_e\)가 rate coefficient를 결정하는 데에 중요하게 작용한다는 점을 유추할 수 있다. 이런 이유로 전자 온도 \(T_e\)와 rate coefficient \(K\)의 관계를 보는 경우가 많다. $($아래 그림 참고$)$
+
+또한 식 $(3)$을 보면 electro-static energy 를 결정하는 \(V\)가 상대속도 \(v\)를 결정하고, 또 cross-section이 \(v\)에 의해 결정되므로, Energy \(V\)와 cross-section \(\sigma\)간의 관게를 보는 것 또한 자연스럽다. $($아래 그림 참고$)$ 
+
+# Coulomb collision : collision between charged particles
+
+Charged particle들의 collision 중에서도 elastric collision을 다룬다. 
+
+## Differential scattering cross-section
+- event \(\triangleq\) scattering into the solid angle \(d\Omega(\theta)\)
+- collision between field particle and test particle that have same charge
+  
