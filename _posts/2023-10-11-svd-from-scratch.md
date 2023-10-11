@@ -32,6 +32,29 @@ singular value decomposition from scratch with python
 
 어떤 행렬에 대해서냐면, 각각 \(AA^T\)와 \(A^TA\)에 대해서이다. 여기서 기억할 점이 있는데, 이 두 행렬은 같은 non-zero eigenvalue를 공유한다는 사실이다. 즉, 지금은 \(2\times 2\) matrix인 \(AA^T\)의 eigenvalue들은 모두 \(3\times 3\) matrix인 \(A^TA\)의 eigenvalue에 포함된다.
 
+잠시 곁가지로 빠져서 \(AA^T\)와 \(A^TA\)가 같은 non-zero eigenvalue들을 공유하는 이유에 대해서 살펴보자.
+
+\(A^TA\)의 eigenvalue 하나를 \(\lambda\)라고 하자. 즉 다음이 성립한다.
+
+\[A^TAx = \lambda x\text{ for some nonzero vector }x\in\mathbb{R}^2\]
+
+이제 양변에 \(A\)를 곱하면
+
+\[AA^T(Ax) = \lambda (Ax)\]
+
+이므로 \(\lambda\)는 \(AA^T\)의 eigenvalue도 된다. 
+
+반대로 \(AA^T\)의 eigenvalue 하나를 \(\lambda\)라고 하자. 즉 다음이 성립한다.
+
+\[AA^Tx = \lambda x\text{ for some nonzero vector }x\in\mathbb{R}^2\]
+
+양변에 \(A^T\)를 곱하면
+
+\[A^TA(A^Tx)=\lambda(A^Tx)\]
+
+이므로 \(\lambda\)는 \(A^TA\)의 eigenvalue도 된다. 
+
+
 ```python
 import numpy as np
 
