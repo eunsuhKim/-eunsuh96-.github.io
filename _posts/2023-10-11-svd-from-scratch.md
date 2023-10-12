@@ -32,7 +32,10 @@ singular value decomposition from scratch with python
 
 어떤 행렬에 대해서냐면, 각각 \(AA^T\)와 \(A^TA\)에 대해서이다. 여기서 기억할 점이 있는데, 이 두 행렬은 같은 non-zero eigenvalue를 공유한다는 사실이다. 즉, 지금은 \(2\times 2\) matrix인 \(AA^T\)의 eigenvalue들은 모두 \(3\times 3\) matrix인 \(A^TA\)의 eigenvalue에 포함된다.
 
-잠시 곁가지로 빠져서 \(AA^T\)와 \(A^TA\)가 같은 non-zero eigenvalue들을 공유하는 이유에 대해서 살펴보자.
+
+---
+
+잠시 곁가지로 빠져서 \(AA^T\)와 \(A^TA\)가 같은 non-zero eigenvalue들을 공유하는 이유에 대해서 살펴보자. 여기서 기억해야 할 어떤 행렬 \(M\in\mathbb{R}^{n\times n}\)eigenvector \(\lambda_M\in\mathbb{R}\)의 정의는 "\(Mx=\lambda_M v\) for some nonzero vector \(v\in\mathbb{R}^n\)"이다. $(n$은 자연수이다.$)$
 
 \(A^TA\)의 eigenvalue 하나를 \(\lambda\)라고 하자. 즉 다음이 성립한다.
 
@@ -42,7 +45,7 @@ singular value decomposition from scratch with python
 
 \[AA^T(Ax) = \lambda (Ax)\]
 
-이므로 \(\lambda\)는 \(AA^T\)의 eigenvalue도 된다. 
+이며, \(Ax\)가 만약 zero vector라면 \(A^TAx=A^T\boldsymbol{0}=\boldsymbol{0}=\lambda x\)이어서 \(x\)가 zero vector라는 모순이 나오므로 \(\lambda\)는 \(AA^T\)의 eigenvalue도 된다. 
 
 반대로 \(AA^T\)의 eigenvalue 하나를 \(\lambda\)라고 하자. 즉 다음이 성립한다.
 
@@ -52,7 +55,30 @@ singular value decomposition from scratch with python
 
 \[A^TA(A^Tx)=\lambda(A^Tx)\]
 
-이므로 \(\lambda\)는 \(A^TA\)의 eigenvalue도 된다. 
+이며, \(A^Tx\)가 만약 zero vector라면 \(AA^Tx=A\boldsymbol{0}=\boldsymbol{0}=\lambda x\)이어서 \(x\)가 zero vector라는 모순이 나오므로 \(\lambda\)는 \(A^TA\)의 eigenvalue도 된다. 
+
+따라서 \(AA^T\)와 \(A^TA\)는 non-zero eigenvalue들을 서로 공유할 수밖에 없다. 
+
+---
+
+다시 원래의 eigenvalue & eigenvector 계산 과정으로 돌아가 보자.
+
+사실 아래의 python 코드에서는 numpy linalg 라이브러리의 함수를 써서 계산할 것이지만 우선 손으로 계산한다면 어떤 과정을 거쳐야 하는지를 살펴보자.
+
+위에서 살펴보았듯이 \(AA^T\)와 \(A^TA\)의 non-zero eigenvalue set은 같으므로 두 행렬 중 크기가 작은 행렬을 선택해서 eigen-analysis를 하는 것이 좋다. 지금은 \(A\in\mathbb{R}^{2\times 3}\)이므로 \(2\times 2\)행렬인 \(AA^T=\begin{bmatrix}1&2&0\\\\0&1&2\end{bmatrix}\begin{bmatrix}1&0\\\\2&1\\\\0&2\end{bmatrix}=\begin{bmatrix}5&2\\\\2&5\end{bmatrix}\)를 이용해 보자. 
+
+\[\begin{aligned}\det\begin{bmatrix}5-\lambda&2\\\\2&5-\lambda\end{bmatrix}&=25+\lambda^2-10\lambda-4 \\\\&= \lambda^2-10\lambda+21=0\\\\&\leftrightarrow \lambda=7\text{ or }\lambda=3.\end{aligned}\]
+
+이제 각 non-zero eigenvalue들에 correponding하는 eigenvector를 구해 보자.
+
+# Step 2 : \(\Sigma\) Construction
+
+\(\Sigma\) 행렬을 구하기 위해서는 아래와 같이 diagonal 성분에 큰 순서대로 non-zero eigenvalue들을 넣어주면 된다. 이외의 element들은 0으로 두면 된다.
+
+\[\Sigma = \begin{bmatrix}7&0&0\\\\0&3&0\end{bmatrix}\]
+
+
+
 
 
 ```python
@@ -62,19 +88,15 @@ import numpy as np
 A = np.array([[1, 2, 0], [0, 1, 2]],dtype=np.float64)
 print(f"Given matrix: \n{A}")
 
-# 1. Compute A^T A and A A^T
+# 1. Compute the eigenvalues and eigenvectors of AtA and AAt
 AtA = np.dot(A.T, A)
 AAt = np.dot(A, A.T)
 
-# 2. Compute the eigenvalues and eigenvectors of AtA
 eig_vals_v, eig_vecs_v = np.linalg.eig(AtA)
-
-# 3. Compute the eigenvalues and eigenvectors of AAt
 eig_vals_u, eig_vecs_u = np.linalg.eig(AAt)
-print(eig_vals_u)
-print(eig_vecs_u)
 
-# 4. Singular values are the square root of the eigenvalues of AtA
+
+# 2. Singular values are the square root of the eigenvalues of AtA
 small_dim = np.min(A.shape)
 print(f"Smaller dimension: {small_dim}")
 if A.shape[0]>A.shape[1]:
