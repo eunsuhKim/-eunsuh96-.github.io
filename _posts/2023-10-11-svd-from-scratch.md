@@ -69,16 +69,64 @@ singular value decomposition from scratch with python
 
 \[\begin{aligned}\det\begin{bmatrix}5-\lambda&2\\\\2&5-\lambda\end{bmatrix}&=25+\lambda^2-10\lambda-4 \\\\&= \lambda^2-10\lambda+21=0\\\\&\leftrightarrow \lambda=7\text{ or }\lambda=3.\end{aligned}\]
 
-이제 각 non-zero eigenvalue들에 correponding하는 eigenvector를 구해 보자.
+이제 각 non-zero eigenvalue들에 correponding하는 eigenvector를 \(AA^T\)와 \(A^TA\)에 대하여 구해 보자.
 
-# Step 2 : \(\Sigma\) Construction
+## \(AA^T\)의 경우
+
+먼저 $( AA^T-\lambda I )x=\begin{bmatrix}5-7&2\\\\2&5-7\end{bmatrix}x=\boldsymbol{0} $을 만족하는 \(x\)를 하나 찾아보면 \(x=\begin{bmatrix}1\\\\1\end{bmatrix}\)이 있고, 
+
+$( AA^T-\lambda I )x=\begin{bmatrix}5-3&2\\\\2&5-3\end{bmatrix}x=\boldsymbol{0}$을 만족하는 \(x\)를 하나 찾아보면 \(x=\begin{bmatrix}1\\\\-1\end{bmatrix}\)이 있다.
+
+## \(A^TA\)의 경우
+
+$(A^TA-\lambda I)x = \begin{bmatrix}1-7&2&0\\\\2&5-7&2\\\\0&2&4-7\end{bmatrix}x=\boldsymbol{0}$을 만족하는 \(x\)를 하나 찾아보면 \(x=\begin{bmatrix}1\\\\3\\\\2\end{bmatrix}\)이 있고,
+
+$(A^TA-\lambda I)x = \begin{bmatrix}1-3&2&0\\\\2&5-3&2\\\\0&2&4-3\end{bmatrix}x=\boldsymbol{0}$을 만족하는 \(x\)를 하나 찾아보면 \(x=\begin{bmatrix}1\\\\1\\\\-2\end{bmatrix}\)이 있고,
+
+$(A^TA-\lambda I)x = \begin{bmatrix}1-0&2&0\\\\2&5-0&2\\\\0&2&4-0\end{bmatrix}x=\boldsymbol{0}$을 만족하는 \(x\)를 하나 찾아보면 \(x=\begin{bmatrix}4\\\\-2\\\\1\end{bmatrix}\)이 있다.
+
+# Step 2 : \(U,V\) construction
+위에서 구한 eigenvector들을 활용하여 orthogonal matrix \(U\)를 만들면 된다.
+사실 이 과정은 아래 python code 에서는 numpy linalg 라이브러리의 qr decomposition 함수를 사용하여 계산할 것이지만, 이 함수가 어떤 역할을 하는지 구체적으로 살펴 보자.
+
+## \(U\)
+Gram-Schmidt algorithm을 활용하여 orthogonalization을 해보자.
+
+위에서 찾은 두 개의 벡터를 \(a_1=[1, 1]^T,a_2=[1, -1]^T\)라고 하자. 
+
+\(q_1 = \frac{a_1}{\parallel a_1\parallel}=[\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}]^T\)
+
+$u_2 = a_2 - (a_2\cdot q_1)q_1 = [1, -1]^T - \begin{bmatrix}    1 \\\\ -1\end{bmatrix}\cdot \begin{bmatrix}\frac{1}{\sqrt{2}}\\\\\frac{1}{\sqrt{2}}\end{bmatrix} = [1,-1]^T$
+
+\(q_2 = \frac{u_2}{\parallel u_2\parallel} = [\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}]^T\)
+
+\(U:=\begin{bmatrix}q_1&q_2\end{bmatrix} = \begin{bmatrix}\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\\\\ \frac{1}{\sqrt{2}}& -\frac{1}{\sqrt{2}}\end{bmatrix}\)
+
+## \(V\)
+마찬가지로 Gram-Schmidt algorithm을 활용하여 orthonormalization을 해보자.
+
+위에서 찾은 세 개의 벡터를 \(a_1=[1, 3, 2]^T,a_2=[1, 1, -2]^T,a_3=[4, -2, 1]^T\)라고 하자.
+
+\(q_1 = \frac{a_1}{\parallel a_1\parallel}=[\frac{1}{\sqrt{14}}, \frac{3}{\sqrt{14}}, \frac{2}{\sqrt{14}}]^T\)
+
+$u_2 = a_2 - (a_2\cdot q_1)q_1 = [1, 1, -2]^T - \begin{bmatrix}    1 \\\\ 1\\\\2\end{bmatrix}\cdot \begin{bmatrix}\frac{1}{\sqrt{14}}\\\\ \frac{3}{\sqrt{14}}\\\\ \frac{2}{\sqrt{14}}\end{bmatrix} = [1,1,-2]^T $
+
+\(q_2 = \frac{u_2}{\parallel u_2\parallel} = [\frac{1}{\sqrt{6}},\frac{1}{\sqrt{6}},-\frac{1}{\sqrt{6}}]^T\)
+
+$u_3 = a_3 - (a_3\cdot q_1)q_1- (a_3\cdot q_2)q_2 = [4, -2, 1]^T - \begin{bmatrix}    4 \\\\ 2\\\\1\end{bmatrix}\cdot \begin{bmatrix}\frac{1}{\sqrt{14}}\\\\ \frac{3}{\sqrt{14}}\\\\ \frac{2}{\sqrt{14}}\end{bmatrix}  -\begin{bmatrix}    4 \\\\ 2\\\\1\end{bmatrix}\cdot \begin{bmatrix}\frac{1}{\sqrt{6}}\\\\ \frac{1}{\sqrt{6}}\\\\ -\frac{2}{\sqrt{6}}\end{bmatrix}  = [4,2,1]^T $
+
+\(q_3 = \frac{u_3}{\parallel u_3\parallel} = [\frac{4}{\sqrt{21}},\frac{2}{\sqrt{21}},\frac{1}{\sqrt{21}}]^T\)
+
+
+\(V:=\begin{bmatrix}q_1&q_2&q_3\end{bmatrix} = \begin{bmatrix}\frac{1}{\sqrt{14}}&\frac{1}{\sqrt{6}}&\frac{4}{\sqrt{21}}\\\\ \frac{3}{\sqrt{14}}& \frac{1}{\sqrt{6}}&\frac{2}{\sqrt{21}}\\\\ \frac{2}{\sqrt{14}}& -\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{21}}\end{bmatrix}\)
+
+공교롭게도 \(U\)와 \(V\)의 재료인 eigenvector들끼리 서로 orthogonal했어서 각각을 unit vector로만 만들어주면 되었다. 그리고 이 과정에서 \(U\)와 \(V\)의 eigenvector들을, eigenvalue의 크기 순으로 자연스럽게 배열하였다. 아래 코드에서는 QR decomposition을 활용하여 orthonormal matrix \(Q\)를 찾는 위 과정을 대신하였다.
+
+# Step 3 : \(\Sigma\) construction
 
 \(\Sigma\) 행렬을 구하기 위해서는 아래와 같이 diagonal 성분에 큰 순서대로 non-zero eigenvalue들을 넣어주면 된다. 이외의 element들은 0으로 두면 된다.
 
 \[\Sigma = \begin{bmatrix}7&0&0\\\\0&3&0\end{bmatrix}\]
-
-
-
 
 
 ```python
@@ -100,11 +148,9 @@ eig_vals_u, eig_vecs_u = np.linalg.eig(AAt)
 small_dim = np.min(A.shape)
 print(f"Smaller dimension: {small_dim}")
 if A.shape[0]>A.shape[1]:
-    print("hi")
     eig_vals_u = np.maximum(eig_vals_u, 0)
     singular_vals = np.sqrt(eig_vals_u)
 else:
-    print("hello")
     eig_vals_v = np.maximum(eig_vals_v, 0)
     singular_vals = np.sqrt(eig_vals_v)
 
@@ -149,3 +195,34 @@ print(f"A reconstruction =\n {np.matmul(np.matmul(U,Sigma),V.T)}")
 u,sigma,vt = np.linalg.svd(A)
 print(f"Result using np.linalg.svd =\n {np.matmul(np.matmul(u,np.concatenate([np.diag(sigma),np.zeros((2,1))],axis=1)),vt)}")
 ```
+
+실행 결과는 다음과 같다. 
+```bash
+Given matrix: 
+[[1. 2. 1.]
+ [0. 1. 2.]]
+[9.53112887 1.46887113]
+[[ 0.74967818 -0.66180256]
+ [ 0.66180256  0.74967818]]
+Smaller dimension: 2
+
+Sigular values:[3.08725264e+00 1.66249066e-08 1.21196994e+00]
+U:
+[[-0.74967818 -0.66180256]
+ [-0.66180256  0.74967818]]
+
+Sigma:
+[[3.08725264 0.         0.        ]
+ [0.         1.21196994 0.        ]]
+
+V^T:
+[[-0.2428302  -0.70002658 -0.67156256]
+ [-0.54605526 -0.47354883  0.69106812]
+ [-0.80178373  0.53452248 -0.26726124]]
+A reconstruction =
+ [[ 1.0000000e+00  2.0000000e+00  1.0000000e+00]
+ [-2.5848809e-16  1.0000000e+00  2.0000000e+00]]
+Result using np.linalg.svd =
+ [[1.00000000e+00 2.00000000e+00 1.00000000e+00]
+ [3.27147417e-16 1.00000000e+00 2.00000000e+00]]
+ ```

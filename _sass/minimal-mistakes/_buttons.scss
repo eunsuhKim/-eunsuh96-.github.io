@@ -95,3 +95,23 @@
     font-size: $type-size-7;
   }
 }
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: transparent;// #f7f7f7;
+  color: grey;
+  border: none;
+  cursor: pointer;
+}
+
+.language-label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: grey;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
