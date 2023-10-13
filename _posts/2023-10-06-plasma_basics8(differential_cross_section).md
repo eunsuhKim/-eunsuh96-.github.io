@@ -70,7 +70,12 @@ Rate coefficient \(K_{ex}\)의 아래 첨자는 excitation collision의 반응 �
 
 Rate coefficient를 위와 같이 쓰면 자연스럽게 \(v,\sigma_{ex}(v)\)를 결정하는 입자 간 상대속도\(v\)에 직접적인 영향을 주는 전자 온도 \(T_e\)가 rate coefficient를 결정하는 데에 중요하게 작용한다는 점을 유추할 수 있다. 이런 이유로 전자 온도 \(T_e\)와 rate coefficient \(K\)의 관계를 보는 경우가 많다. $($아래 그림 참고$)$
 
+![](../images/rate-coeff-electron-temperature.png)
+
+
 또한 식 $(3)$을 보면 electro-static energy 를 결정하는 \(V\)가 상대속도 \(v\)를 결정하고, 또 cross-section이 \(v\)에 의해 결정되므로, Energy \(V\)와 cross-section \(\sigma\)간의 관게를 보는 것 또한 자연스럽다. $($아래 그림 참고$)$ 
+
+![](../images/cross-section-energey-graph.png)
 
 # Coulomb collision : collision between charged particles
 
